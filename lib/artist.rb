@@ -23,7 +23,11 @@ class Artist
   end
 
   def find_or_create_by_name(name)
-
+    if self.find(name)
+      self.find(name)
+    else
+      self.new(name)
+    end
     #take in the name that is passed in. Find the artist instance that has that name
     #or create one if it doesnt exist. Either way the return value of the method will be an instance
     #of an artist with the name attribute filled out
