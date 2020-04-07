@@ -18,9 +18,7 @@ class Song
   end
 
   def artist_name=(name)
-    #turn the artists name as a string into an Artist object
-    #either we have to create the artist instance
-    #or it exists and we have to find that instance
-    #assign the song to the artist
+    self.artist = Artist.find_or_create_by_name(name)
+    artist.add_song(self)
   end
 end
